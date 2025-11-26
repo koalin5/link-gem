@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LINK | Custom Electric Fleet Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              link: {
+                black: '#111111',
+                dark: '#1A1A1A',
+                gray: '#F3F4F6',
+                silver: '#E5E7EB',
+                cyan: '#33C5F4', // New Cyan Color
+                white: '#FFFFFF',
+              },
+            },
+            fontFamily: {
+              sans: ['Archivo', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            backgroundImage: {
+              'grid-pattern':
+                'linear-gradient(to right, #E5E7EB 1px, transparent 1px), linear-gradient(to bottom, #E5E7EB 1px, transparent 1px)',
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        background-color: #ffffff;
+        color: #111111;
+        overflow-x: hidden;
+      }
+
+      /* Technical Grid Background */
+      .tech-grid {
+        background-size: 40px 40px;
+        mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f3f4f6;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #33c5f4;
+      }
+
+      /* Utilities */
+      .clip-diagonal {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+      }
+
+      .blueprint-overlay {
+        background-image: linear-gradient(
+            rgba(51, 197, 244, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(90deg, rgba(51, 197, 244, 0.05) 1px, transparent 1px);
+        background-size: 20px 20px;
+      }
+
+      .text-outline {
+        -webkit-text-stroke: 1px #e5e7eb;
+        color: transparent;
+      }
+
+      .hover-reveal-image {
+        clip-path: inset(0 100% 0 0);
+        transition: clip-path 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+      }
+
+      .group:hover .hover-reveal-image {
+        clip-path: inset(0 0 0 0);
+      }
+
+      /* Loading Screen */
+      .loader-shutter {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #33c5f4;
+        z-index: 9999;
+        transform-origin: bottom;
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <!-- Loading Animation -->
+    <div class="loader-shutter" id="shutter">
+      <div class="absolute inset-0 flex items-center justify-center">
+        <h1
+          class="text-white text-9xl font-black tracking-tighter mix-blend-multiply opacity-50"
+        >
+          LINK
+        </h1>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 transition-all duration-300"
+      id="navbar"
+    >
+      <div
+        class="max-w-[1920px] mx-auto px-6 h-20 flex justify-between items-center"
+      >
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2 group">
+          <div
+            class="w-10 h-10 bg-black text-white flex items-center justify-center font-black tracking-tighter text-xl group-hover:bg-link-cyan transition-colors duration-300"
+          >
+            L
+          </div>
+          <span class="font-bold text-xl tracking-tight"
+            >LINK<span class="text-link-cyan">EV</span></span
+          >
+        </a>
+
+        <!-- Center Menu -->
+        <div class="hidden lg:flex items-center gap-12">
+          <a
+            href="#vehicles"
+            class="text-sm font-medium hover:text-link-cyan transition-colors uppercase tracking-wide"
+            >Vehicles</a
+          >
+          <a
+            href="#engineering"
+            class="text-sm font-medium hover:text-link-cyan transition-colors uppercase tracking-wide"
+            >Engineering</a
+          >
+          <a
+            href="#services"
+            class="text-sm font-medium hover:text-link-cyan transition-colors uppercase tracking-wide"
+            >Services</a
+          >
+          <a
+            href="#contact"
+            class="text-sm font-medium hover:text-link-cyan transition-colors uppercase tracking-wide"
+            >Contact</a
+          >
+        </div>
+
+        <!-- CTA -->
+        <div class="flex items-center gap-6">
+          <a
+            href="#"
+            class="hidden md:flex items-center gap-2 text-xs font-mono text-gray-500 hover:text-black"
+          >
+            <i data-lucide="globe" class="w-4 h-4"></i> EN
+          </a>
+          <button
+            class="bg-black text-white px-6 py-3 text-sm font-bold uppercase hover:bg-link-cyan transition-all duration-300 clip-btn"
+          >
+            Configure Fleet
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen pt-20 overflow-hidden bg-link-gray">
+      <!-- Technical Grid BG -->
+      <div
+        class="absolute inset-0 bg-grid-pattern tech-grid opacity-50 pointer-events-none"
+      ></div>
+
+      <div
+        class="max-w-[1920px] mx-auto px-6 h-[calc(100vh-80px)] flex flex-col justify-center relative z-10"
+      >
+        <div class="grid grid-cols-12 gap-8 h-full items-center">
+          <!-- Text Content -->
+          <div class="col-span-12 lg:col-span-5 relative z-20">
+            <div
+              class="inline-flex items-center gap-2 border border-black/10 bg-white px-3 py-1 rounded-sm mb-8"
+            >
+              <span class="w-2 h-2 bg-link-cyan animate-pulse"></span>
+              <span
+                class="text-xs font-mono uppercase tracking-wider text-gray-500"
+                >System Operational</span
+              >
+            </div>
+
+            <h1
+              class="text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter mb-8 text-black"
+            >
+              CUSTOM<br />
+              <span
+                class="text-stroke text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-gray-200"
+                style="-webkit-text-stroke: 2px black"
+                >FLEET</span
+              ><br />
+              SOLUTIONS
+            </h1>
+
+            <p
+              class="text-lg text-gray-600 max-w-md leading-relaxed mb-10 border-l-2 border-link-cyan pl-6"
+            >
+              We don't just manufacture vehicles. We engineer custom mobility
+              ecosystems tailored to your specific operational DNA.
+            </p>
+
+            <div class="flex flex-wrap gap-4">
+              <button
+                class="group flex items-center gap-4 border-b border-black pb-1 hover:border-link-cyan transition-colors"
+              >
+                <span class="text-sm font-bold uppercase tracking-widest"
+                  >Explore Models</span
+                >
+                <i
+                  data-lucide="arrow-down-right"
+                  class="group-hover:translate-x-1 group-hover:translate-y-1 transition-transform"
+                ></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Hero Image / Graphic -->
+          <div
+            class="col-span-12 lg:col-span-7 h-full relative flex items-center justify-center"
+          >
+            <!-- Rotating Schematic Ring -->
+            <div
+              class="absolute w-[600px] h-[600px] border border-dashed border-gray-400 rounded-full animate-[spin_60s_linear_infinite] opacity-30"
+            ></div>
+            <div
+              class="absolute w-[400px] h-[400px] border border-gray-300 rounded-full animate-[spin_40s_linear_infinite_reverse] opacity-30"
+            ></div>
+
+            <!-- Main Truck Image (Placeholder) -->
+            <img
+              src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=1600"
+              alt="Link Electric Truck"
+              class="relative z-10 w-full max-w-4xl object-contain drop-shadow-2xl grayscale contrast-125 hover:grayscale-0 transition-all duration-700 gs-hero-img"
+            />
+
+            <!-- Floating Specs -->
+            <div
+              class="absolute top-1/4 right-10 bg-white/80 backdrop-blur border border-gray-200 p-4 shadow-xl hidden lg:block gs-float-1"
+            >
+              <p class="text-xs font-mono text-gray-500 mb-1">
+                PAYLOAD CAPACITY
+              </p>
+              <p class="text-2xl font-bold">4,500 KG</p>
+            </div>
+            <div
+              class="absolute bottom-1/4 left-10 bg-white/80 backdrop-blur border border-gray-200 p-4 shadow-xl hidden lg:block gs-float-2"
+            >
+              <p class="text-xs font-mono text-gray-500 mb-1">RANGE</p>
+              <p class="text-2xl font-bold">350 KM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scrolling Ticker -->
+      <div
+        class="absolute bottom-0 w-full bg-black text-white py-3 overflow-hidden whitespace-nowrap border-t-4 border-link-cyan"
+      >
+        <div
+          class="flex gap-12 font-mono text-sm uppercase tracking-widest animate-marquee"
+        >
+          <span>/// LAST MILE DELIVERY OPTIMIZED</span>
+          <span>/// 100% ELECTRIC ARCHITECTURE</span>
+          <span>/// AI-DRIVEN LOGISTICS INTEGRATION</span>
+          <span>/// HEAVY DUTY CHASSIS</span>
+          <span>/// CUSTOM MANUFACTURING</span>
+          <span>/// LAST MILE DELIVERY OPTIMIZED</span>
+          <span>/// 100% ELECTRIC ARCHITECTURE</span>
+          <span>/// AI-DRIVEN LOGISTICS INTEGRATION</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Engineering Philosophy Section -->
+    <section id="engineering" class="py-32 px-6 bg-white relative">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row gap-16">
+          <div class="lg:w-1/3">
+            <h2 class="text-6xl font-black mb-6">
+              WE <span class="text-link-cyan">ENGINEER</span><br />ADAPTABILITY
+            </h2>
+            <div class="w-full h-px bg-gray-200 my-8"></div>
+            <p class="text-gray-600 text-lg leading-relaxed">
+              Off-the-shelf solutions don't work for complex supply chains. LINK
+              specializes in designing custom chassis and powertrain
+              configurations that fit your infrastructure, not the other way
+              around.
+            </p>
+          </div>
+          <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Feature 1 -->
+            <div
+              class="p-8 border border-gray-200 hover:border-black transition-colors group cursor-crosshair bg-gray-50"
+            >
+              <i
+                data-lucide="cpu"
+                class="w-10 h-10 mb-6 text-gray-400 group-hover:text-link-cyan transition-colors"
+              ></i>
+              <h3 class="text-xl font-bold mb-3">Modular Architecture</h3>
+              <p class="text-sm text-gray-500">
+                Interchangeable battery packs and motor configurations for
+                varied route demands.
+              </p>
+            </div>
+            <!-- Feature 2 -->
+            <div
+              class="p-8 border border-gray-200 hover:border-black transition-colors group cursor-crosshair bg-gray-50"
+            >
+              <i
+                data-lucide="drafting-compass"
+                class="w-10 h-10 mb-6 text-gray-400 group-hover:text-link-cyan transition-colors"
+              ></i>
+              <h3 class="text-xl font-bold mb-3">Custom Fabrication</h3>
+              <p class="text-sm text-gray-500">
+                From fifth-wheel trucks to specialized indoor cargo movers like
+                the E-Puller.
+              </p>
+            </div>
+            <!-- Feature 3 -->
+            <div
+              class="p-8 border border-gray-200 hover:border-black transition-colors group cursor-crosshair bg-gray-50"
+            >
+              <i
+                data-lucide="network"
+                class="w-10 h-10 mb-6 text-gray-400 group-hover:text-link-cyan transition-colors"
+              ></i>
+              <h3 class="text-xl font-bold mb-3">Fleet Connectivity</h3>
+              <p class="text-sm text-gray-500">
+                Real-time telemetry and predictive maintenance integrated into
+                every chassis.
+              </p>
+            </div>
+            <!-- Feature 4 -->
+            <div
+              class="p-8 border border-gray-200 hover:border-black transition-colors group cursor-crosshair bg-gray-50"
+            >
+              <i
+                data-lucide="zap"
+                class="w-10 h-10 mb-6 text-gray-400 group-hover:text-link-cyan transition-colors"
+              ></i>
+              <h3 class="text-xl font-bold mb-3">Infrastructure Ready</h3>
+              <p class="text-sm text-gray-500">
+                Partnered with QiOn for seamless high-power charging
+                integration.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vehicle Showcase (Horizontal Scroll Concept) -->
+    <section
+      id="vehicles"
+      class="py-20 bg-link-black text-white overflow-hidden"
+    >
+      <div
+        class="px-6 mb-12 flex justify-between items-end max-w-[1920px] mx-auto"
+      >
+        <div>
+          <span
+            class="text-link-cyan font-mono text-sm tracking-widest uppercase mb-2 block"
+            >Our Fleet</span
+          >
+          <h2 class="text-5xl md:text-7xl font-black">MODELS</h2>
+        </div>
+        <div class="hidden md:block">
+          <p class="text-gray-500 text-sm font-mono text-right">
+            SCROLL TO EXPLORE ///<br />DRAG TO NAVIGATE
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="flex overflow-x-auto snap-x snap-mandatory pb-20 gap-8 px-6 no-scrollbar custom-scroll-container"
+      >
+        <!-- Vehicle Card 1 -->
+        <div class="min-w-[85vw] md:min-w-[60vw] snap-center relative group">
+          <div
+            class="aspect-[16/9] bg-link-dark relative overflow-hidden border border-white/10"
+          >
+            <div
+              class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1566576912902-192ba01d162c?auto=format&fit=crop&q=80&w=1600')] bg-cover bg-center grayscale opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+            ></div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"
+            ></div>
+
+            <div class="absolute bottom-0 left-0 p-8 md:p-12 w-full">
+              <div
+                class="flex justify-between items-end border-b border-white/20 pb-6 mb-6"
+              >
+                <div>
+                  <h3 class="text-4xl md:text-6xl font-black mb-2">
+                    TOWNINK 53
+                  </h3>
+                  <p class="text-link-cyan font-mono uppercase tracking-widest">
+                    Last-Mile Specialist
+                  </p>
+                </div>
+                <div class="hidden md:block text-right">
+                  <p class="text-xs text-gray-400 font-mono">CLASS</p>
+                  <p class="text-xl font-bold">LIGHT CARGO</p>
+                </div>
+              </div>
+              <div class="flex gap-8 text-sm font-mono text-gray-400">
+                <span>> 100% ELECTRIC</span>
+                <span>> MODULAR CARGO BOX</span>
+                <span>> URBAN AGILITY</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vehicle Card 2 -->
+        <div class="min-w-[85vw] md:min-w-[60vw] snap-center relative group">
+          <div
+            class="aspect-[16/9] bg-link-dark relative overflow-hidden border border-white/10"
+          >
+            <div
+              class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1596525732151-57d6d58548a3?auto=format&fit=crop&q=80&w=1600')] bg-cover bg-center grayscale opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+            ></div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"
+            ></div>
+
+            <div class="absolute bottom-0 left-0 p-8 md:p-12 w-full">
+              <div
+                class="flex justify-between items-end border-b border-white/20 pb-6 mb-6"
+              >
+                <div>
+                  <h3 class="text-4xl md:text-6xl font-black mb-2">E-PULLER</h3>
+                  <p class="text-link-cyan font-mono uppercase tracking-widest">
+                    Indoor Logistics
+                  </p>
+                </div>
+                <div class="hidden md:block text-right">
+                  <p class="text-xs text-gray-400 font-mono">CLASS</p>
+                  <p class="text-xl font-bold">HEAVY TOWING</p>
+                </div>
+              </div>
+              <div class="flex gap-8 text-sm font-mono text-gray-400">
+                <span>> ZERO EMISSIONS</span>
+                <span>> COMPACT TURNING</span>
+                <span>> HIGH TORQUE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vehicle Card 3 -->
+        <div class="min-w-[85vw] md:min-w-[60vw] snap-center relative group">
+          <div
+            class="aspect-[16/9] bg-link-dark relative overflow-hidden border border-white/10"
+          >
+            <div
+              class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&q=80&w=1600')] bg-cover bg-center grayscale opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+            ></div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"
+            ></div>
+
+            <div class="absolute bottom-0 left-0 p-8 md:p-12 w-full">
+              <div
+                class="flex justify-between items-end border-b border-white/20 pb-6 mb-6"
+              >
+                <div>
+                  <h3 class="text-4xl md:text-6xl font-black mb-2">
+                    E-TOURINK
+                  </h3>
+                  <p class="text-link-cyan font-mono uppercase tracking-widest">
+                    Passenger Transport
+                  </p>
+                </div>
+                <div class="hidden md:block text-right">
+                  <p class="text-xs text-gray-400 font-mono">CLASS</p>
+                  <p class="text-xl font-bold">BUS</p>
+                </div>
+              </div>
+              <div class="flex gap-8 text-sm font-mono text-gray-400">
+                <span>> 20-40 PASSENGERS</span>
+                <span>> CITY RANGE</span>
+                <span>> ACCESSIBLE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services / Blueprint Section -->
+    <section
+      id="services"
+      class="py-32 px-6 bg-link-gray relative overflow-hidden"
+    >
+      <!-- Blueprint Pattern -->
+      <div class="absolute inset-0 blueprint-overlay opacity-30"></div>
+
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center mb-20">
+          <h2 class="text-5xl font-black mb-4">THE LINK METHODOLOGY</h2>
+          <p class="text-gray-500 max-w-2xl mx-auto">
+            From strategic analysis to operational deployment.
+          </p>
+        </div>
+
+        <div class="relative">
+          <!-- Connecting Line (Desktop) -->
+          <div
+            class="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-gray-300 -translate-y-1/2 z-0"
+          ></div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Step 1 -->
+            <div
+              class="bg-white p-8 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300"
+            >
+              <div
+                class="w-12 h-12 bg-black text-white flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-link-cyan transition-colors"
+              >
+                01
+              </div>
+              <h3 class="text-lg font-bold mb-3 uppercase">
+                Strategic<br />Analysis
+              </h3>
+              <p class="text-sm text-gray-500">
+                We analyze your routes, payloads, and energy costs to define the
+                perfect fleet spec.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div
+              class="bg-white p-8 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300"
+            >
+              <div
+                class="w-12 h-12 bg-black text-white flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-link-cyan transition-colors"
+              >
+                02
+              </div>
+              <h3 class="text-lg font-bold mb-3 uppercase">
+                Custom<br />Engineering
+              </h3>
+              <p class="text-sm text-gray-500">
+                Design and fabrication of chassis and bodies tailored to your
+                specific industry.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div
+              class="bg-white p-8 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300"
+            >
+              <div
+                class="w-12 h-12 bg-black text-white flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-link-cyan transition-colors"
+              >
+                03
+              </div>
+              <h3 class="text-lg font-bold mb-3 uppercase">
+                Charging<br />Infrastructure
+              </h3>
+              <p class="text-sm text-gray-500">
+                Integration with QiOn Tech for depot charging solutions and grid
+                management.
+              </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div
+              class="bg-white p-8 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300"
+            >
+              <div
+                class="w-12 h-12 bg-black text-white flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-link-cyan transition-colors"
+              >
+                04
+              </div>
+              <h3 class="text-lg font-bold mb-3 uppercase">
+                Operational<br />Handover
+              </h3>
+              <p class="text-sm text-gray-500">
+                Delivery, training, and ongoing telemetry support for your team.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / Contact -->
+    <section
+      id="contact"
+      class="py-32 px-6 bg-black text-white relative overflow-hidden"
+    >
+      <div
+        class="absolute right-0 top-0 w-1/2 h-full bg-link-dark skew-x-12 translate-x-32 hidden lg:block"
+      ></div>
+
+      <div
+        class="max-w-7xl mx-auto relative z-10 flex flex-col lg:flex-row items-center justify-between gap-16"
+      >
+        <div class="lg:w-1/2">
+          <h2 class="text-6xl font-black mb-6">
+            READY TO <br /><span class="text-link-cyan">ELECTRIFY?</span>
+          </h2>
+          <p class="text-gray-400 text-lg mb-8 max-w-md">
+            Connect with our engineering team to start your fleet analysis. No
+            generic sales pitch, just data-driven solutions.
+          </p>
+          <form class="space-y-4 max-w-md">
+            <input
+              type="email"
+              placeholder="Corporate Email Address"
+              class="w-full bg-white/10 border border-white/20 p-4 text-white focus:outline-none focus:border-link-cyan transition-colors placeholder-gray-500"
+            />
+            <button
+              class="w-full bg-link-cyan text-white font-bold uppercase p-4 hover:bg-white hover:text-black transition-colors"
+            >
+              Initiate Consultation
+            </button>
+          </form>
+        </div>
+
+        <div class="lg:w-1/2 grid grid-cols-2 gap-8 text-sm font-mono">
+          <div>
+            <h4 class="text-gray-500 mb-4 uppercase tracking-widest">
+              Headquarters
+            </h4>
+            <p>Mexico City, MX<br />Dubai, UAE<br />Boston, USA</p>
+          </div>
+          <div>
+            <h4 class="text-gray-500 mb-4 uppercase tracking-widest">
+              Contact
+            </h4>
+            <p>info@linkvehicles.com<br />+1 (555) 019-2834</p>
+          </div>
+          <div
+            class="col-span-2 pt-8 border-t border-white/10 flex justify-between items-center"
+          >
+            <p class="text-gray-600">&copy; 2025 LINK EV Vehicles</p>
+            <div class="flex gap-4">
+              <a href="#" class="hover:text-link-cyan"
+                ><i data-lucide="linkedin"></i
+              ></a>
+              <a href="#" class="hover:text-link-cyan"
+                ><i data-lucide="twitter"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Initialize Icons
+      lucide.createIcons();
+
+      // GSAP Animations
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Loader
+      window.addEventListener('load', () => {
+        const tl = gsap.timeline();
+
+        tl.to('#shutter', {
+          scaleY: 0,
+          duration: 1.2,
+          ease: 'power4.inOut',
+          delay: 0.5,
+        })
+          .from(
+            'h1',
+            {
+              y: 100,
+              opacity: 0,
+              duration: 1,
+              ease: 'power3.out',
+            },
+            '-=0.5'
+          )
+          .from(
+            '.gs-hero-img',
+            {
+              x: 100,
+              opacity: 0,
+              duration: 1.5,
+              ease: 'power3.out',
+            },
+            '-=1'
+          )
+          .from(
+            '.gs-float-1, .gs-float-2',
+            {
+              y: 20,
+              opacity: 0,
+              stagger: 0.2,
+              duration: 0.8,
+            },
+            '-=1'
+          );
+      });
+
+      // Navbar Scroll Logic
+      window.addEventListener('scroll', () => {
+        const nav = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+          nav.classList.add('h-16');
+          nav.classList.remove('h-20');
+        } else {
+          nav.classList.add('h-20');
+          nav.classList.remove('h-16');
+        }
+      });
+
+      // Horizontal Scroll for Vehicles
+      // In a real production site, we might use GSAP ScrollTrigger to pin and scroll horizontally
+      // For this demo, we kept native snap scrolling for better usability without complex JS blocking.
+    </script>
+  </body>
+</html>
