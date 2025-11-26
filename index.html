@@ -94,6 +94,20 @@
         clip-path: inset(0 0 0 0);
       }
 
+      /* Marquee Animation */
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .animate-marquee {
+        animation: marquee 30s linear infinite;
+      }
+
       /* Loading Screen */
       .loader-shutter {
         position: fixed;
@@ -128,14 +142,11 @@
       >
         <!-- Logo -->
         <a href="#" class="flex items-center gap-2 group">
-          <div
-            class="w-10 h-10 bg-black text-white flex items-center justify-center font-black tracking-tighter text-xl group-hover:bg-link-cyan transition-colors duration-300"
-          >
-            L
-          </div>
-          <span class="font-bold text-xl tracking-tight"
-            >LINK<span class="text-link-cyan">EV</span></span
-          >
+          <img
+            src="https://www.linkvehicles.com/images/logos/LINK_Logo_Black.svg"
+            alt="Link EV Logo"
+            class="h-10 w-auto group-hover:opacity-80 transition-opacity duration-300"
+          />
         </a>
 
         <!-- Center Menu -->
@@ -248,11 +259,11 @@
               class="absolute w-[400px] h-[400px] border border-gray-300 rounded-full animate-[spin_40s_linear_infinite_reverse] opacity-30"
             ></div>
 
-            <!-- Main Truck Image (Placeholder) -->
+            <!-- Main Truck Image -->
             <img
-              src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=1600"
+              src="https://www.linkvehicles.com/images/HomeENG.avif"
               alt="Link Electric Truck"
-              class="relative z-10 w-full max-w-4xl object-contain drop-shadow-2xl grayscale contrast-125 hover:grayscale-0 transition-all duration-700 gs-hero-img"
+              class="relative z-10 w-full max-w-4xl object-contain drop-shadow-2xl hover:scale-105 transition-all duration-700 gs-hero-img"
             />
 
             <!-- Floating Specs -->
@@ -371,10 +382,62 @@
       </div>
     </section>
 
+    <!-- Manufacturing Section -->
+    <section
+      class="py-24 px-6 bg-link-black text-white relative overflow-hidden"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="relative">
+            <img
+              src="https://www.linkvehicles.com/images/fabricamos.avif"
+              alt="Link EV Manufacturing"
+              class="w-full h-auto object-cover shadow-2xl"
+            />
+            <div
+              class="absolute -bottom-4 -right-4 w-24 h-24 bg-link-cyan"
+            ></div>
+          </div>
+          <div>
+            <span
+              class="text-link-cyan font-mono text-sm tracking-widest uppercase mb-4 block"
+              >Innovation</span
+            >
+            <h2 class="text-5xl md:text-6xl font-black mb-6 leading-tight">
+              WE MANUFACTURE<br />
+              <span class="text-gray-500">ACCORDING TO</span><br />
+              TODAY'S NEEDS
+            </h2>
+            <p class="text-gray-400 text-lg leading-relaxed mb-8">
+              At Link, we are constantly innovating, creating cutting-edge
+              solutions for the transportation sector. Our achievements range
+              from introducing the E-Puller, an essential tool for indoor cargo
+              movement in Mexico, to leading the way in autonomous driving
+              technologies.
+            </p>
+            <div class="flex gap-8">
+              <div>
+                <p class="text-4xl font-black text-link-cyan">100%</p>
+                <p class="text-sm text-gray-500 uppercase tracking-wider">
+                  Electric
+                </p>
+              </div>
+              <div>
+                <p class="text-4xl font-black text-link-cyan">Custom</p>
+                <p class="text-sm text-gray-500 uppercase tracking-wider">
+                  Solutions
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Vehicle Showcase (Horizontal Scroll Concept) -->
     <section
       id="vehicles"
-      class="py-20 bg-link-black text-white overflow-hidden"
+      class="py-20 bg-link-dark text-white overflow-hidden"
     >
       <div
         class="px-6 mb-12 flex justify-between items-end max-w-[1920px] mx-auto"
@@ -402,7 +465,7 @@
             class="aspect-[16/9] bg-link-dark relative overflow-hidden border border-white/10"
           >
             <div
-              class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1566576912902-192ba01d162c?auto=format&fit=crop&q=80&w=1600')] bg-cover bg-center grayscale opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+              class="absolute inset-0 bg-[url('https://www.linkvehicles.com/images/slide-TOWNINK-71-CARGO.avif')] bg-cover bg-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
             ></div>
             <div
               class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"
@@ -440,7 +503,7 @@
             class="aspect-[16/9] bg-link-dark relative overflow-hidden border border-white/10"
           >
             <div
-              class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1596525732151-57d6d58548a3?auto=format&fit=crop&q=80&w=1600')] bg-cover bg-center grayscale opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+              class="absolute inset-0 bg-[url('https://www.linkvehicles.com/images/e-puller.avif')] bg-cover bg-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
             ></div>
             <div
               class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"
@@ -476,7 +539,45 @@
             class="aspect-[16/9] bg-link-dark relative overflow-hidden border border-white/10"
           >
             <div
-              class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&q=80&w=1600')] bg-cover bg-center grayscale opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+              class="absolute inset-0 bg-[url('https://www.linkvehicles.com/images/39-tons02.avif')] bg-cover bg-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+            ></div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"
+            ></div>
+
+            <div class="absolute bottom-0 left-0 p-8 md:p-12 w-full">
+              <div
+                class="flex justify-between items-end border-b border-white/20 pb-6 mb-6"
+              >
+                <div>
+                  <h3 class="text-4xl md:text-6xl font-black mb-2">
+                    FIFTH-WHEEL
+                  </h3>
+                  <p class="text-link-cyan font-mono uppercase tracking-widest">
+                    Heavy Duty Transport
+                  </p>
+                </div>
+                <div class="hidden md:block text-right">
+                  <p class="text-xs text-gray-400 font-mono">CLASS</p>
+                  <p class="text-xl font-bold">39 TONS</p>
+                </div>
+              </div>
+              <div class="flex gap-8 text-sm font-mono text-gray-400">
+                <span>> FULL-TRAILER CONFIG</span>
+                <span>> HIGH EFFICIENCY</span>
+                <span>> LONG DISTANCE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vehicle Card 4 -->
+        <div class="min-w-[85vw] md:min-w-[60vw] snap-center relative group">
+          <div
+            class="aspect-[16/9] bg-link-dark relative overflow-hidden border border-white/10"
+          >
+            <div
+              class="absolute inset-0 bg-[url('https://www.linkvehicles.com/images/passenger.jpeg')] bg-cover bg-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
             ></div>
             <div
               class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"
@@ -529,78 +630,92 @@
         <div class="relative">
           <!-- Connecting Line (Desktop) -->
           <div
-            class="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-gray-300 -translate-y-1/2 z-0"
+            class="hidden lg:block absolute top-12 left-0 w-full h-0.5 bg-link-cyan/30 z-0"
           ></div>
 
-          <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             <!-- Step 1 -->
             <div
-              class="bg-white p-8 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300"
+              class="bg-white p-6 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300"
             >
-              <div
-                class="w-12 h-12 bg-black text-white flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-link-cyan transition-colors"
-              >
-                01
-              </div>
-              <h3 class="text-lg font-bold mb-3 uppercase">
-                Strategic<br />Analysis
+              <img
+                src="https://www.linkvehicles.com/images/deliver-team.png"
+                alt="Strategic Analysis"
+                class="w-16 h-16 object-contain mb-4 group-hover:scale-110 transition-transform"
+              />
+              <h3 class="text-base font-bold mb-2 uppercase">
+                Strategic Analysis
               </h3>
               <p class="text-sm text-gray-500">
-                We analyze your routes, payloads, and energy costs to define the
-                perfect fleet spec.
+                Detailed analysis of client needs and operational objectives.
               </p>
             </div>
 
             <!-- Step 2 -->
             <div
-              class="bg-white p-8 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300"
+              class="bg-white p-6 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300"
             >
-              <div
-                class="w-12 h-12 bg-black text-white flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-link-cyan transition-colors"
-              >
-                02
-              </div>
-              <h3 class="text-lg font-bold mb-3 uppercase">
-                Custom<br />Engineering
+              <img
+                src="https://www.linkvehicles.com/images/deliver-customized.png"
+                alt="Customized Solutions"
+                class="w-16 h-16 object-contain mb-4 group-hover:scale-110 transition-transform"
+              />
+              <h3 class="text-base font-bold mb-2 uppercase">
+                Customized Solutions
               </h3>
               <p class="text-sm text-gray-500">
-                Design and fabrication of chassis and bodies tailored to your
-                specific industry.
+                Tailored solutions for electric fleets adapting to industry
+                demands.
               </p>
             </div>
 
             <!-- Step 3 -->
             <div
-              class="bg-white p-8 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300"
+              class="bg-white p-6 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300"
             >
-              <div
-                class="w-12 h-12 bg-black text-white flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-link-cyan transition-colors"
-              >
-                03
-              </div>
-              <h3 class="text-lg font-bold mb-3 uppercase">
-                Charging<br />Infrastructure
+              <img
+                src="https://www.linkvehicles.com/images/deliver-partnership.png"
+                alt="Charging Infrastructure"
+                class="w-16 h-16 object-contain mb-4 group-hover:scale-110 transition-transform"
+              />
+              <h3 class="text-base font-bold mb-2 uppercase">
+                Charging Infrastructure
               </h3>
               <p class="text-sm text-gray-500">
-                Integration with QiOn Tech for depot charging solutions and grid
-                management.
+                Partnership with QiOn Tech for optimal charging solutions.
               </p>
             </div>
 
             <!-- Step 4 -->
             <div
-              class="bg-white p-8 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300"
+              class="bg-white p-6 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300"
             >
-              <div
-                class="w-12 h-12 bg-black text-white flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-link-cyan transition-colors"
-              >
-                04
-              </div>
-              <h3 class="text-lg font-bold mb-3 uppercase">
-                Operational<br />Handover
+              <img
+                src="https://www.linkvehicles.com/images/deliver-handle.png"
+                alt="Simplified Implementation"
+                class="w-16 h-16 object-contain mb-4 group-hover:scale-110 transition-transform"
+              />
+              <h3 class="text-base font-bold mb-2 uppercase">Implementation</h3>
+              <p class="text-sm text-gray-500">
+                Efficient installation and configuration with regulatory
+                compliance.
+              </p>
+            </div>
+
+            <!-- Step 5 -->
+            <div
+              class="bg-white p-6 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300"
+            >
+              <img
+                src="https://www.linkvehicles.com/images/deliver-production.png"
+                alt="Operational Delivery"
+                class="w-16 h-16 object-contain mb-4 group-hover:scale-110 transition-transform"
+              />
+              <h3 class="text-base font-bold mb-2 uppercase">
+                Operational Delivery
               </h3>
               <p class="text-sm text-gray-500">
-                Delivery, training, and ongoing telemetry support for your team.
+                Production and commissioning of fully operational fleet.
               </p>
             </div>
           </div>
@@ -614,7 +729,12 @@
       class="py-32 px-6 bg-black text-white relative overflow-hidden"
     >
       <div
-        class="absolute right-0 top-0 w-1/2 h-full bg-link-dark skew-x-12 translate-x-32 hidden lg:block"
+        class="absolute right-0 top-0 w-1/2 h-full hidden lg:block opacity-30"
+        style="
+          background-image: url('https://www.linkvehicles.com/images/mapa-en.avif');
+          background-size: cover;
+          background-position: center;
+        "
       ></div>
 
       <div
@@ -658,7 +778,14 @@
           <div
             class="col-span-2 pt-8 border-t border-white/10 flex justify-between items-center"
           >
-            <p class="text-gray-600">&copy; 2025 LINK EV Vehicles</p>
+            <div class="flex items-center gap-4">
+              <img
+                src="https://www.linkvehicles.com/images/link-logo-white.png"
+                alt="Link EV Logo"
+                class="h-8 w-auto opacity-80"
+              />
+              <p class="text-gray-600">&copy; 2025 LINK EV Vehicles</p>
+            </div>
             <div class="flex gap-4">
               <a href="#" class="hover:text-link-cyan"
                 ><i data-lucide="linkedin"></i
