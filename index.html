@@ -249,37 +249,45 @@
 
           <!-- Hero Image / Graphic -->
           <div
-            class="col-span-12 lg:col-span-7 h-full relative flex items-center justify-center"
+            class="col-span-12 lg:col-span-7 h-full relative flex items-center justify-start lg:-ml-16"
           >
-            <!-- Rotating Schematic Ring -->
-            <div
-              class="absolute w-[600px] h-[600px] border border-dashed border-gray-400 rounded-full animate-[spin_60s_linear_infinite] opacity-30"
-            ></div>
-            <div
-              class="absolute w-[400px] h-[400px] border border-gray-300 rounded-full animate-[spin_40s_linear_infinite_reverse] opacity-30"
-            ></div>
-
             <!-- Main Truck Image -->
-            <img
-              src="https://www.linkvehicles.com/images/HomeENG.avif"
-              alt="Link Electric Truck"
-              class="relative z-10 w-full max-w-4xl object-contain drop-shadow-2xl hover:scale-105 transition-all duration-700 gs-hero-img"
-            />
+            <div
+              class="w-full max-w-[280px] sm:max-w-[380px] md:max-w-[480px] lg:max-w-[600px] xl:max-w-[700px]"
+              style="
+                -webkit-mask-image: radial-gradient(
+                  ellipse 65% 75% at 50% 50%,
+                  black 45%,
+                  transparent 80%
+                );
+                mask-image: radial-gradient(
+                  ellipse 65% 75% at 50% 50%,
+                  black 45%,
+                  transparent 80%
+                );
+              "
+            >
+              <img
+                src="images/hero-image.png"
+                alt="Link Electric Truck"
+                class="w-full h-auto object-contain gs-hero-img hover:scale-105 transition-transform duration-700"
+              />
+            </div>
 
             <!-- Floating Specs -->
             <div
-              class="absolute top-1/4 right-10 bg-white/80 backdrop-blur border border-gray-200 p-4 shadow-xl hidden lg:block gs-float-1"
+              class="absolute top-1/4 right-4 md:right-8 lg:right-16 bg-white/90 backdrop-blur-sm border border-gray-200 p-3 md:p-4 shadow-xl hidden sm:block gs-float-1 z-10"
             >
               <p class="text-xs font-mono text-gray-500 mb-1">
                 PAYLOAD CAPACITY
               </p>
-              <p class="text-2xl font-bold">4,500 KG</p>
+              <p class="text-xl md:text-2xl font-bold">4,500 KG</p>
             </div>
             <div
-              class="absolute bottom-1/4 left-10 bg-white/80 backdrop-blur border border-gray-200 p-4 shadow-xl hidden lg:block gs-float-2"
+              class="absolute bottom-1/4 left-4 md:left-8 lg:left-16 bg-white/90 backdrop-blur-sm border border-gray-200 p-3 md:p-4 shadow-xl hidden sm:block gs-float-2 z-10"
             >
               <p class="text-xs font-mono text-gray-500 mb-1">RANGE</p>
-              <p class="text-2xl font-bold">350 KM</p>
+              <p class="text-xl md:text-2xl font-bold">350 KM</p>
             </div>
           </div>
         </div>
