@@ -125,7 +125,7 @@
     <div class="loader-shutter" id="shutter">
       <div class="absolute inset-0 flex items-center justify-center">
         <h1
-          class="text-white text-9xl font-black tracking-tighter mix-blend-multiply opacity-50"
+          class="text-white text-5xl md:text-7xl lg:text-9xl font-black tracking-tighter mix-blend-multiply opacity-50"
         >
           LINK
         </h1>
@@ -138,14 +138,14 @@
       id="navbar"
     >
       <div
-        class="max-w-[1920px] mx-auto px-6 h-20 flex justify-between items-center"
+        class="max-w-[1920px] mx-auto px-4 md:px-6 h-16 md:h-20 flex justify-between items-center"
       >
         <!-- Logo -->
         <a href="#" class="flex items-center group">
           <img
             src="https://www.linkvehicles.com/images/logos/LINK_Logo_Black.svg"
             alt="Link EV Logo"
-            class="h-7 w-auto group-hover:opacity-70 transition-opacity duration-300"
+            class="h-6 md:h-7 w-auto group-hover:opacity-70 transition-opacity duration-300"
           />
         </a>
 
@@ -174,7 +174,7 @@
         </div>
 
         <!-- CTA -->
-        <div class="flex items-center gap-6">
+        <div class="flex items-center gap-4 md:gap-6">
           <a
             href="#"
             class="hidden md:flex items-center gap-2 text-xs font-mono text-gray-500 hover:text-black"
@@ -182,29 +182,29 @@
             <i data-lucide="globe" class="w-4 h-4"></i> EN
           </a>
           <button
-            class="bg-black text-white px-6 py-3 text-sm font-bold uppercase hover:bg-link-cyan transition-all duration-300 clip-btn"
+            class="bg-black text-white px-4 md:px-6 py-2 md:py-3 text-xs md:text-sm font-bold uppercase hover:bg-link-cyan transition-all duration-300 clip-btn"
           >
-            Configure Fleet
+            Configure
           </button>
         </div>
       </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative min-h-screen pt-20 overflow-hidden bg-link-gray">
+    <header class="relative min-h-screen pt-16 md:pt-20 overflow-hidden bg-link-gray">
       <!-- Technical Grid BG -->
       <div
         class="absolute inset-0 bg-grid-pattern tech-grid opacity-50 pointer-events-none"
       ></div>
 
       <div
-        class="max-w-[1920px] mx-auto px-6 h-[calc(100vh-80px)] flex flex-col justify-center relative z-10"
+        class="max-w-[1920px] mx-auto px-4 md:px-6 min-h-[calc(100vh-64px)] md:min-h-[calc(100vh-80px)] flex flex-col justify-start lg:justify-center relative z-10 pt-6 pb-16 md:py-0"
       >
-        <div class="grid grid-cols-12 gap-8 h-full items-center">
+        <div class="grid grid-cols-12 gap-4 md:gap-8 items-start lg:items-center">
           <!-- Text Content -->
-          <div class="col-span-12 lg:col-span-5 relative z-20">
+          <div class="col-span-12 lg:col-span-5 relative z-20 text-center lg:text-left">
             <div
-              class="inline-flex items-center gap-2 border border-black/10 bg-white px-3 py-1 rounded-sm mb-8"
+              class="inline-flex items-center gap-2 border border-black/10 bg-white px-3 py-1 rounded-sm mb-4 md:mb-8"
             >
               <span class="w-2 h-2 bg-link-cyan animate-pulse"></span>
               <span
@@ -214,34 +214,34 @@
             </div>
 
             <h1
-              class="text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter mb-8 text-black"
+              class="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black leading-[0.95] tracking-tighter mb-5 md:mb-8 text-black"
             >
               CUSTOM<br />
               <span
                 class="text-stroke text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-gray-200"
-                style="-webkit-text-stroke: 2px black"
+                style="-webkit-text-stroke: 1px black"
                 >FLEET</span
               ><br />
               SOLUTIONS
             </h1>
 
             <p
-              class="text-lg text-gray-600 max-w-md leading-relaxed mb-10 border-l-2 border-link-cyan pl-6"
+              class="text-sm md:text-lg text-gray-600 max-w-md leading-relaxed mb-6 md:mb-10 border-l-2 border-link-cyan pl-4 md:pl-6 mx-auto lg:mx-0 text-left"
             >
               We don't just manufacture vehicles. We engineer custom mobility
               ecosystems tailored to your specific operational DNA.
             </p>
 
-            <div class="flex flex-wrap gap-4">
+            <div class="flex flex-wrap gap-4 justify-center lg:justify-start mb-8 lg:mb-0">
               <button
-                class="group flex items-center gap-4 border-b border-black pb-1 hover:border-link-cyan transition-colors"
+                class="group flex items-center gap-3 md:gap-4 border-b border-black pb-1 hover:border-link-cyan transition-colors"
               >
-                <span class="text-sm font-bold uppercase tracking-widest"
+                <span class="text-xs md:text-sm font-bold uppercase tracking-widest"
                   >Explore Models</span
                 >
                 <i
                   data-lucide="arrow-down-right"
-                  class="group-hover:translate-x-1 group-hover:translate-y-1 transition-transform"
+                  class="w-4 h-4 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform"
                 ></i>
               </button>
             </div>
@@ -249,21 +249,21 @@
 
           <!-- Hero Image / Graphic -->
           <div
-            class="col-span-12 lg:col-span-7 h-full relative flex items-center justify-start lg:-ml-16"
+            class="col-span-12 lg:col-span-7 relative flex items-center justify-center lg:justify-start lg:-ml-16"
           >
             <!-- Main Truck Image -->
             <div
-              class="w-full max-w-[280px] sm:max-w-[380px] md:max-w-[480px] lg:max-w-[600px] xl:max-w-[700px]"
+              class="w-full max-w-[340px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[700px] mx-auto lg:mx-0 -ml-6 sm:ml-0"
               style="
                 -webkit-mask-image: radial-gradient(
-                  ellipse 65% 75% at 50% 50%,
-                  black 45%,
-                  transparent 80%
+                  ellipse 85% 85% at 50% 50%,
+                  black 60%,
+                  transparent 95%
                 );
                 mask-image: radial-gradient(
-                  ellipse 65% 75% at 50% 50%,
-                  black 45%,
-                  transparent 80%
+                  ellipse 85% 85% at 50% 50%,
+                  black 60%,
+                  transparent 95%
                 );
               "
             >
@@ -274,20 +274,20 @@
               />
             </div>
 
-            <!-- Floating Specs -->
+            <!-- Floating Specs - Hidden on mobile -->
             <div
-              class="absolute top-1/4 right-4 md:right-8 lg:right-16 bg-white/90 backdrop-blur-sm border border-gray-200 p-3 md:p-4 shadow-xl hidden sm:block gs-float-1 z-10"
+              class="absolute top-1/4 right-8 lg:right-16 bg-white/90 backdrop-blur-sm border border-gray-200 p-4 shadow-xl gs-float-1 z-10 hidden md:block"
             >
               <p class="text-xs font-mono text-gray-500 mb-1">
                 PAYLOAD CAPACITY
               </p>
-              <p class="text-xl md:text-2xl font-bold">4,500 KG</p>
+              <p class="text-2xl font-bold">4,500 KG</p>
             </div>
             <div
-              class="absolute bottom-1/4 left-4 md:left-8 lg:left-16 bg-white/90 backdrop-blur-sm border border-gray-200 p-3 md:p-4 shadow-xl hidden sm:block gs-float-2 z-10"
+              class="absolute bottom-1/4 left-8 lg:left-16 bg-white/90 backdrop-blur-sm border border-gray-200 p-4 shadow-xl gs-float-2 z-10 hidden md:block"
             >
               <p class="text-xs font-mono text-gray-500 mb-1">RANGE</p>
-              <p class="text-xl md:text-2xl font-bold">350 KM</p>
+              <p class="text-2xl font-bold">350 KM</p>
             </div>
           </div>
         </div>
@@ -295,49 +295,49 @@
 
       <!-- Scrolling Ticker -->
       <div
-        class="absolute bottom-0 w-full bg-black text-white py-3 overflow-hidden whitespace-nowrap border-t-4 border-link-cyan"
+        class="absolute bottom-0 w-full bg-black text-white py-2 md:py-3 overflow-hidden whitespace-nowrap border-t-2 md:border-t-4 border-link-cyan"
       >
         <div
-          class="flex gap-12 font-mono text-sm uppercase tracking-widest animate-marquee"
+          class="flex gap-6 md:gap-12 font-mono text-xs md:text-sm uppercase tracking-widest animate-marquee"
         >
-          <span>/// LAST MILE DELIVERY OPTIMIZED</span>
-          <span>/// 100% ELECTRIC ARCHITECTURE</span>
-          <span>/// AI-DRIVEN LOGISTICS INTEGRATION</span>
+          <span>/// LAST MILE DELIVERY</span>
+          <span>/// 100% ELECTRIC</span>
+          <span>/// AI-DRIVEN LOGISTICS</span>
           <span>/// HEAVY DUTY CHASSIS</span>
           <span>/// CUSTOM MANUFACTURING</span>
-          <span>/// LAST MILE DELIVERY OPTIMIZED</span>
-          <span>/// 100% ELECTRIC ARCHITECTURE</span>
-          <span>/// AI-DRIVEN LOGISTICS INTEGRATION</span>
+          <span>/// LAST MILE DELIVERY</span>
+          <span>/// 100% ELECTRIC</span>
+          <span>/// AI-DRIVEN LOGISTICS</span>
         </div>
       </div>
     </header>
 
     <!-- Engineering Philosophy Section -->
-    <section id="engineering" class="py-32 px-6 bg-white relative">
+    <section id="engineering" class="py-16 md:py-32 px-4 md:px-6 bg-white relative">
       <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col lg:flex-row gap-16">
+        <div class="flex flex-col lg:flex-row gap-8 md:gap-16">
           <div class="lg:w-1/3">
-            <h2 class="text-6xl font-black mb-6">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6">
               WE <span class="text-link-cyan">ENGINEER</span><br />ADAPTABILITY
             </h2>
-            <div class="w-full h-px bg-gray-200 my-8"></div>
-            <p class="text-gray-600 text-lg leading-relaxed">
+            <div class="w-full h-px bg-gray-200 my-4 md:my-8"></div>
+            <p class="text-gray-600 text-base md:text-lg leading-relaxed">
               Off-the-shelf solutions don't work for complex supply chains. LINK
               specializes in designing custom chassis and powertrain
               configurations that fit your infrastructure, not the other way
               around.
             </p>
           </div>
-          <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
             <!-- Feature 1 -->
             <div
-              class="p-8 border border-gray-200 hover:border-black transition-colors group cursor-crosshair bg-gray-50"
+              class="p-5 md:p-8 border border-gray-200 hover:border-black transition-colors group cursor-crosshair bg-gray-50"
             >
               <i
                 data-lucide="cpu"
-                class="w-10 h-10 mb-6 text-gray-400 group-hover:text-link-cyan transition-colors"
+                class="w-8 h-8 md:w-10 md:h-10 mb-4 md:mb-6 text-gray-400 group-hover:text-link-cyan transition-colors"
               ></i>
-              <h3 class="text-xl font-bold mb-3">Modular Architecture</h3>
+              <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Modular Architecture</h3>
               <p class="text-sm text-gray-500">
                 Interchangeable battery packs and motor configurations for
                 varied route demands.
@@ -345,13 +345,13 @@
             </div>
             <!-- Feature 2 -->
             <div
-              class="p-8 border border-gray-200 hover:border-black transition-colors group cursor-crosshair bg-gray-50"
+              class="p-5 md:p-8 border border-gray-200 hover:border-black transition-colors group cursor-crosshair bg-gray-50"
             >
               <i
                 data-lucide="drafting-compass"
-                class="w-10 h-10 mb-6 text-gray-400 group-hover:text-link-cyan transition-colors"
+                class="w-8 h-8 md:w-10 md:h-10 mb-4 md:mb-6 text-gray-400 group-hover:text-link-cyan transition-colors"
               ></i>
-              <h3 class="text-xl font-bold mb-3">Custom Fabrication</h3>
+              <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Custom Fabrication</h3>
               <p class="text-sm text-gray-500">
                 From fifth-wheel trucks to specialized indoor cargo movers like
                 the E-Puller.
@@ -359,13 +359,13 @@
             </div>
             <!-- Feature 3 -->
             <div
-              class="p-8 border border-gray-200 hover:border-black transition-colors group cursor-crosshair bg-gray-50"
+              class="p-5 md:p-8 border border-gray-200 hover:border-black transition-colors group cursor-crosshair bg-gray-50"
             >
               <i
                 data-lucide="network"
-                class="w-10 h-10 mb-6 text-gray-400 group-hover:text-link-cyan transition-colors"
+                class="w-8 h-8 md:w-10 md:h-10 mb-4 md:mb-6 text-gray-400 group-hover:text-link-cyan transition-colors"
               ></i>
-              <h3 class="text-xl font-bold mb-3">Fleet Connectivity</h3>
+              <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Fleet Connectivity</h3>
               <p class="text-sm text-gray-500">
                 Real-time telemetry and predictive maintenance integrated into
                 every chassis.
@@ -373,13 +373,13 @@
             </div>
             <!-- Feature 4 -->
             <div
-              class="p-8 border border-gray-200 hover:border-black transition-colors group cursor-crosshair bg-gray-50"
+              class="p-5 md:p-8 border border-gray-200 hover:border-black transition-colors group cursor-crosshair bg-gray-50"
             >
               <i
                 data-lucide="zap"
-                class="w-10 h-10 mb-6 text-gray-400 group-hover:text-link-cyan transition-colors"
+                class="w-8 h-8 md:w-10 md:h-10 mb-4 md:mb-6 text-gray-400 group-hover:text-link-cyan transition-colors"
               ></i>
-              <h3 class="text-xl font-bold mb-3">Infrastructure Ready</h3>
+              <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Infrastructure Ready</h3>
               <p class="text-sm text-gray-500">
                 Partnered with QiOn for seamless high-power charging
                 integration.
@@ -392,47 +392,47 @@
 
     <!-- Manufacturing Section -->
     <section
-      class="py-24 px-6 bg-link-black text-white relative overflow-hidden"
+      class="py-16 md:py-24 px-4 md:px-6 bg-link-black text-white relative overflow-hidden"
     >
       <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div class="relative">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
+          <div class="relative order-2 lg:order-1">
             <img
               src="https://www.linkvehicles.com/images/fabricamos.avif"
               alt="Link EV Manufacturing"
               class="w-full h-auto object-cover shadow-2xl"
             />
             <div
-              class="absolute -bottom-4 -right-4 w-24 h-24 bg-link-cyan"
+              class="absolute -bottom-2 -right-2 md:-bottom-4 md:-right-4 w-16 h-16 md:w-24 md:h-24 bg-link-cyan"
             ></div>
           </div>
-          <div>
+          <div class="order-1 lg:order-2">
             <span
-              class="text-link-cyan font-mono text-sm tracking-widest uppercase mb-4 block"
+              class="text-link-cyan font-mono text-xs md:text-sm tracking-widest uppercase mb-2 md:mb-4 block"
               >Innovation</span
             >
-            <h2 class="text-5xl md:text-6xl font-black mb-6 leading-tight">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 leading-tight">
               WE MANUFACTURE<br />
               <span class="text-gray-500">ACCORDING TO</span><br />
               TODAY'S NEEDS
             </h2>
-            <p class="text-gray-400 text-lg leading-relaxed mb-8">
+            <p class="text-gray-400 text-base md:text-lg leading-relaxed mb-6 md:mb-8">
               At Link, we are constantly innovating, creating cutting-edge
               solutions for the transportation sector. Our achievements range
               from introducing the E-Puller, an essential tool for indoor cargo
               movement in Mexico, to leading the way in autonomous driving
               technologies.
             </p>
-            <div class="flex gap-8">
+            <div class="flex gap-6 md:gap-8">
               <div>
-                <p class="text-4xl font-black text-link-cyan">100%</p>
-                <p class="text-sm text-gray-500 uppercase tracking-wider">
+                <p class="text-2xl md:text-4xl font-black text-link-cyan">100%</p>
+                <p class="text-xs md:text-sm text-gray-500 uppercase tracking-wider">
                   Electric
                 </p>
               </div>
               <div>
-                <p class="text-4xl font-black text-link-cyan">Custom</p>
-                <p class="text-sm text-gray-500 uppercase tracking-wider">
+                <p class="text-2xl md:text-4xl font-black text-link-cyan">Custom</p>
+                <p class="text-xs md:text-sm text-gray-500 uppercase tracking-wider">
                   Solutions
                 </p>
               </div>
@@ -445,17 +445,17 @@
     <!-- Vehicle Showcase (Horizontal Scroll Concept) -->
     <section
       id="vehicles"
-      class="py-20 bg-link-dark text-white overflow-hidden"
+      class="py-12 md:py-20 bg-link-dark text-white overflow-hidden"
     >
       <div
-        class="px-6 mb-12 flex justify-between items-end max-w-[1920px] mx-auto"
+        class="px-4 md:px-6 mb-8 md:mb-12 flex justify-between items-end max-w-[1920px] mx-auto"
       >
         <div>
           <span
-            class="text-link-cyan font-mono text-sm tracking-widest uppercase mb-2 block"
+            class="text-link-cyan font-mono text-xs md:text-sm tracking-widest uppercase mb-1 md:mb-2 block"
             >Our Fleet</span
           >
-          <h2 class="text-5xl md:text-7xl font-black">MODELS</h2>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black">MODELS</h2>
         </div>
         <div class="hidden md:block">
           <p class="text-gray-500 text-sm font-mono text-right">
@@ -465,7 +465,7 @@
       </div>
 
       <div
-        class="flex overflow-x-auto snap-x snap-mandatory pb-20 gap-8 px-6 no-scrollbar custom-scroll-container"
+        class="flex overflow-x-auto snap-x snap-mandatory pb-8 md:pb-20 gap-4 md:gap-8 px-4 md:px-6 no-scrollbar custom-scroll-container"
       >
         <!-- Vehicle Card 1 -->
         <div class="min-w-[85vw] md:min-w-[60vw] snap-center relative group">
@@ -479,15 +479,15 @@
               class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"
             ></div>
 
-            <div class="absolute bottom-0 left-0 p-8 md:p-12 w-full">
+            <div class="absolute bottom-0 left-0 p-4 sm:p-6 md:p-12 w-full">
               <div
-                class="flex justify-between items-end border-b border-white/20 pb-6 mb-6"
+                class="flex justify-between items-end border-b border-white/20 pb-3 md:pb-6 mb-3 md:mb-6"
               >
                 <div>
-                  <h3 class="text-4xl md:text-6xl font-black mb-2">
+                  <h3 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black mb-1 md:mb-2">
                     TOWNINK 53
                   </h3>
-                  <p class="text-link-cyan font-mono uppercase tracking-widest">
+                  <p class="text-link-cyan font-mono text-xs md:text-sm uppercase tracking-widest">
                     Last-Mile Specialist
                   </p>
                 </div>
@@ -496,9 +496,9 @@
                   <p class="text-xl font-bold">LIGHT CARGO</p>
                 </div>
               </div>
-              <div class="flex gap-8 text-sm font-mono text-gray-400">
+              <div class="flex flex-wrap gap-3 md:gap-8 text-xs md:text-sm font-mono text-gray-400">
                 <span>> 100% ELECTRIC</span>
-                <span>> MODULAR CARGO BOX</span>
+                <span class="hidden sm:inline">> MODULAR CARGO BOX</span>
                 <span>> URBAN AGILITY</span>
               </div>
             </div>
@@ -517,13 +517,13 @@
               class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"
             ></div>
 
-            <div class="absolute bottom-0 left-0 p-8 md:p-12 w-full">
+            <div class="absolute bottom-0 left-0 p-4 sm:p-6 md:p-12 w-full">
               <div
-                class="flex justify-between items-end border-b border-white/20 pb-6 mb-6"
+                class="flex justify-between items-end border-b border-white/20 pb-3 md:pb-6 mb-3 md:mb-6"
               >
                 <div>
-                  <h3 class="text-4xl md:text-6xl font-black mb-2">E-PULLER</h3>
-                  <p class="text-link-cyan font-mono uppercase tracking-widest">
+                  <h3 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black mb-1 md:mb-2">E-PULLER</h3>
+                  <p class="text-link-cyan font-mono text-xs md:text-sm uppercase tracking-widest">
                     Indoor Logistics
                   </p>
                 </div>
@@ -532,9 +532,9 @@
                   <p class="text-xl font-bold">HEAVY TOWING</p>
                 </div>
               </div>
-              <div class="flex gap-8 text-sm font-mono text-gray-400">
+              <div class="flex flex-wrap gap-3 md:gap-8 text-xs md:text-sm font-mono text-gray-400">
                 <span>> ZERO EMISSIONS</span>
-                <span>> COMPACT TURNING</span>
+                <span class="hidden sm:inline">> COMPACT TURNING</span>
                 <span>> HIGH TORQUE</span>
               </div>
             </div>
@@ -553,15 +553,15 @@
               class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"
             ></div>
 
-            <div class="absolute bottom-0 left-0 p-8 md:p-12 w-full">
+            <div class="absolute bottom-0 left-0 p-4 sm:p-6 md:p-12 w-full">
               <div
-                class="flex justify-between items-end border-b border-white/20 pb-6 mb-6"
+                class="flex justify-between items-end border-b border-white/20 pb-3 md:pb-6 mb-3 md:mb-6"
               >
                 <div>
-                  <h3 class="text-4xl md:text-6xl font-black mb-2">
+                  <h3 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black mb-1 md:mb-2">
                     FIFTH-WHEEL
                   </h3>
-                  <p class="text-link-cyan font-mono uppercase tracking-widest">
+                  <p class="text-link-cyan font-mono text-xs md:text-sm uppercase tracking-widest">
                     Heavy Duty Transport
                   </p>
                 </div>
@@ -570,9 +570,9 @@
                   <p class="text-xl font-bold">39 TONS</p>
                 </div>
               </div>
-              <div class="flex gap-8 text-sm font-mono text-gray-400">
-                <span>> FULL-TRAILER CONFIG</span>
-                <span>> HIGH EFFICIENCY</span>
+              <div class="flex flex-wrap gap-3 md:gap-8 text-xs md:text-sm font-mono text-gray-400">
+                <span>> FULL-TRAILER</span>
+                <span class="hidden sm:inline">> HIGH EFFICIENCY</span>
                 <span>> LONG DISTANCE</span>
               </div>
             </div>
@@ -591,15 +591,15 @@
               class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"
             ></div>
 
-            <div class="absolute bottom-0 left-0 p-8 md:p-12 w-full">
+            <div class="absolute bottom-0 left-0 p-4 sm:p-6 md:p-12 w-full">
               <div
-                class="flex justify-between items-end border-b border-white/20 pb-6 mb-6"
+                class="flex justify-between items-end border-b border-white/20 pb-3 md:pb-6 mb-3 md:mb-6"
               >
                 <div>
-                  <h3 class="text-4xl md:text-6xl font-black mb-2">
+                  <h3 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black mb-1 md:mb-2">
                     E-TOURINK
                   </h3>
-                  <p class="text-link-cyan font-mono uppercase tracking-widest">
+                  <p class="text-link-cyan font-mono text-xs md:text-sm uppercase tracking-widest">
                     Passenger Transport
                   </p>
                 </div>
@@ -608,9 +608,9 @@
                   <p class="text-xl font-bold">BUS</p>
                 </div>
               </div>
-              <div class="flex gap-8 text-sm font-mono text-gray-400">
+              <div class="flex flex-wrap gap-3 md:gap-8 text-xs md:text-sm font-mono text-gray-400">
                 <span>> 20-40 PASSENGERS</span>
-                <span>> CITY RANGE</span>
+                <span class="hidden sm:inline">> CITY RANGE</span>
                 <span>> ACCESSIBLE</span>
               </div>
             </div>
@@ -622,15 +622,15 @@
     <!-- Services / Blueprint Section -->
     <section
       id="services"
-      class="py-32 px-6 bg-link-gray relative overflow-hidden"
+      class="py-16 md:py-32 px-4 md:px-6 bg-link-gray relative overflow-hidden"
     >
       <!-- Blueprint Pattern -->
       <div class="absolute inset-0 blueprint-overlay opacity-30"></div>
 
       <div class="max-w-7xl mx-auto relative z-10">
-        <div class="text-center mb-20">
-          <h2 class="text-5xl font-black mb-4">THE LINK METHODOLOGY</h2>
-          <p class="text-gray-500 max-w-2xl mx-auto">
+        <div class="text-center mb-10 md:mb-20">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-4">THE LINK METHODOLOGY</h2>
+          <p class="text-gray-500 max-w-2xl mx-auto text-sm md:text-base px-4">
             From strategic analysis to operational deployment.
           </p>
         </div>
@@ -641,37 +641,37 @@
             class="hidden lg:block absolute top-12 left-0 w-full h-0.5 bg-link-cyan/30 z-0"
           ></div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
             <!-- Step 1 -->
             <div
-              class="bg-white p-6 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300"
+              class="bg-white p-4 md:p-6 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300"
             >
               <img
                 src="https://www.linkvehicles.com/images/deliver-team.png"
                 alt="Strategic Analysis"
-                class="w-16 h-16 object-contain mb-4 group-hover:scale-110 transition-transform"
+                class="w-12 h-12 md:w-16 md:h-16 object-contain mb-3 md:mb-4 group-hover:scale-110 transition-transform"
               />
-              <h3 class="text-base font-bold mb-2 uppercase">
+              <h3 class="text-sm md:text-base font-bold mb-1 md:mb-2 uppercase">
                 Strategic Analysis
               </h3>
-              <p class="text-sm text-gray-500">
+              <p class="text-xs md:text-sm text-gray-500">
                 Detailed analysis of client needs and operational objectives.
               </p>
             </div>
 
             <!-- Step 2 -->
             <div
-              class="bg-white p-6 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300"
+              class="bg-white p-4 md:p-6 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300"
             >
               <img
                 src="https://www.linkvehicles.com/images/deliver-customized.png"
                 alt="Customized Solutions"
-                class="w-16 h-16 object-contain mb-4 group-hover:scale-110 transition-transform"
+                class="w-12 h-12 md:w-16 md:h-16 object-contain mb-3 md:mb-4 group-hover:scale-110 transition-transform"
               />
-              <h3 class="text-base font-bold mb-2 uppercase">
+              <h3 class="text-sm md:text-base font-bold mb-1 md:mb-2 uppercase">
                 Customized Solutions
               </h3>
-              <p class="text-sm text-gray-500">
+              <p class="text-xs md:text-sm text-gray-500">
                 Tailored solutions for electric fleets adapting to industry
                 demands.
               </p>
@@ -679,32 +679,32 @@
 
             <!-- Step 3 -->
             <div
-              class="bg-white p-6 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300"
+              class="bg-white p-4 md:p-6 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300"
             >
               <img
                 src="https://www.linkvehicles.com/images/deliver-partnership.png"
                 alt="Charging Infrastructure"
-                class="w-16 h-16 object-contain mb-4 group-hover:scale-110 transition-transform"
+                class="w-12 h-12 md:w-16 md:h-16 object-contain mb-3 md:mb-4 group-hover:scale-110 transition-transform"
               />
-              <h3 class="text-base font-bold mb-2 uppercase">
+              <h3 class="text-sm md:text-base font-bold mb-1 md:mb-2 uppercase">
                 Charging Infrastructure
               </h3>
-              <p class="text-sm text-gray-500">
+              <p class="text-xs md:text-sm text-gray-500">
                 Partnership with QiOn Tech for optimal charging solutions.
               </p>
             </div>
 
             <!-- Step 4 -->
             <div
-              class="bg-white p-6 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300"
+              class="bg-white p-4 md:p-6 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300"
             >
               <img
                 src="https://www.linkvehicles.com/images/deliver-handle.png"
                 alt="Simplified Implementation"
-                class="w-16 h-16 object-contain mb-4 group-hover:scale-110 transition-transform"
+                class="w-12 h-12 md:w-16 md:h-16 object-contain mb-3 md:mb-4 group-hover:scale-110 transition-transform"
               />
-              <h3 class="text-base font-bold mb-2 uppercase">Implementation</h3>
-              <p class="text-sm text-gray-500">
+              <h3 class="text-sm md:text-base font-bold mb-1 md:mb-2 uppercase">Implementation</h3>
+              <p class="text-xs md:text-sm text-gray-500">
                 Efficient installation and configuration with regulatory
                 compliance.
               </p>
@@ -712,17 +712,17 @@
 
             <!-- Step 5 -->
             <div
-              class="bg-white p-6 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300"
+              class="bg-white p-4 md:p-6 relative z-10 border border-gray-200 shadow-lg group hover:-translate-y-2 transition-transform duration-300 sm:col-span-2 lg:col-span-1"
             >
               <img
                 src="https://www.linkvehicles.com/images/deliver-production.png"
                 alt="Operational Delivery"
-                class="w-16 h-16 object-contain mb-4 group-hover:scale-110 transition-transform"
+                class="w-12 h-12 md:w-16 md:h-16 object-contain mb-3 md:mb-4 group-hover:scale-110 transition-transform"
               />
-              <h3 class="text-base font-bold mb-2 uppercase">
+              <h3 class="text-sm md:text-base font-bold mb-1 md:mb-2 uppercase">
                 Operational Delivery
               </h3>
-              <p class="text-sm text-gray-500">
+              <p class="text-xs md:text-sm text-gray-500">
                 Production and commissioning of fully operational fleet.
               </p>
             </div>
@@ -734,7 +734,7 @@
     <!-- CTA / Contact -->
     <section
       id="contact"
-      class="py-32 px-6 bg-black text-white relative overflow-hidden"
+      class="py-16 md:py-32 px-4 md:px-6 bg-black text-white relative overflow-hidden"
     >
       <div
         class="absolute right-0 top-0 w-1/2 h-full hidden lg:block opacity-30"
@@ -746,60 +746,60 @@
       ></div>
 
       <div
-        class="max-w-7xl mx-auto relative z-10 flex flex-col lg:flex-row items-center justify-between gap-16"
+        class="max-w-7xl mx-auto relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 md:gap-16"
       >
-        <div class="lg:w-1/2">
-          <h2 class="text-6xl font-black mb-6">
+        <div class="w-full lg:w-1/2">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6">
             READY TO <br /><span class="text-link-cyan">ELECTRIFY?</span>
           </h2>
-          <p class="text-gray-400 text-lg mb-8 max-w-md">
+          <p class="text-gray-400 text-base md:text-lg mb-6 md:mb-8 max-w-md">
             Connect with our engineering team to start your fleet analysis. No
             generic sales pitch, just data-driven solutions.
           </p>
-          <form class="space-y-4 max-w-md">
+          <form class="space-y-3 md:space-y-4 max-w-md">
             <input
               type="email"
               placeholder="Corporate Email Address"
-              class="w-full bg-white/10 border border-white/20 p-4 text-white focus:outline-none focus:border-link-cyan transition-colors placeholder-gray-500"
+              class="w-full bg-white/10 border border-white/20 p-3 md:p-4 text-white focus:outline-none focus:border-link-cyan transition-colors placeholder-gray-500 text-sm md:text-base"
             />
             <button
-              class="w-full bg-link-cyan text-white font-bold uppercase p-4 hover:bg-white hover:text-black transition-colors"
+              class="w-full bg-link-cyan text-white font-bold uppercase p-3 md:p-4 hover:bg-white hover:text-black transition-colors text-sm md:text-base"
             >
               Initiate Consultation
             </button>
           </form>
         </div>
 
-        <div class="lg:w-1/2 grid grid-cols-2 gap-8 text-sm font-mono">
+        <div class="w-full lg:w-1/2 grid grid-cols-2 gap-6 md:gap-8 text-sm font-mono">
           <div>
-            <h4 class="text-gray-500 mb-4 uppercase tracking-widest">
+            <h4 class="text-gray-500 mb-2 md:mb-4 uppercase tracking-widest text-xs md:text-sm">
               Headquarters
             </h4>
-            <p>Mexico City, MX<br />Dubai, UAE<br />Boston, USA</p>
+            <p class="text-xs md:text-sm">Mexico City, MX<br />Dubai, UAE<br />Boston, USA</p>
           </div>
           <div>
-            <h4 class="text-gray-500 mb-4 uppercase tracking-widest">
+            <h4 class="text-gray-500 mb-2 md:mb-4 uppercase tracking-widest text-xs md:text-sm">
               Contact
             </h4>
-            <p>info@linkvehicles.com<br />+1 (555) 019-2834</p>
+            <p class="text-xs md:text-sm break-all md:break-normal">info@linkvehicles.com<br />+1 (555) 019-2834</p>
           </div>
           <div
-            class="col-span-2 pt-8 border-t border-white/10 flex justify-between items-center"
+            class="col-span-2 pt-6 md:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4"
           >
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-3 md:gap-4">
               <img
                 src="https://www.linkvehicles.com/images/link-logo-white.png"
                 alt="Link EV Logo"
-                class="h-8 w-auto opacity-80"
+                class="h-6 md:h-8 w-auto opacity-80"
               />
-              <p class="text-gray-600">&copy; 2025 LINK EV Vehicles</p>
+              <p class="text-gray-600 text-xs md:text-sm">&copy; 2025 LINK EV</p>
             </div>
             <div class="flex gap-4">
               <a href="#" class="hover:text-link-cyan"
-                ><i data-lucide="linkedin"></i
+                ><i data-lucide="linkedin" class="w-5 h-5"></i
               ></a>
               <a href="#" class="hover:text-link-cyan"
-                ><i data-lucide="twitter"></i
+                ><i data-lucide="twitter" class="w-5 h-5"></i
               ></a>
             </div>
           </div>
